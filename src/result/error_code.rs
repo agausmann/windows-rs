@@ -40,7 +40,7 @@ impl ErrorCode {
 
     /// Returns the `Option` as a `Result` if the option is a `Some` value, returning
     /// a suitable error if not.
-    pub fn and_some<T: Interface>(self, some: Option<T>) -> Result<T> {
+    pub fn and_some<T>(self, some: Option<T>) -> Result<T> {
         if self.is_ok() {
             if let Some(result) = some {
                 Ok(result)
